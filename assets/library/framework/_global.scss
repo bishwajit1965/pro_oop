@@ -1,0 +1,21 @@
+body{
+	font-family:$body-font-family;
+	font-size:$body-font-size;
+		
+}
+
+a{
+	color:$link-color;
+	font-weight:$link-weight;
+}
+
+.header, .footer {
+	color:$header-footer-text-color;
+}
+.container {
+	min-height:440px;
+}
+.sidebar {
+	background-color:#DDD;
+	color:#000;
+}
