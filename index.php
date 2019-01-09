@@ -27,7 +27,9 @@
                             // Factory
                             use Storage\DesignPatterns\Factory\AutomobileFactory as AutomobileFactory;
                             // Tester
-                            use Storage\Test\Another as Another;
+                            // StrategyPattern
+                            use Srorage\StrategyPattern\SendEmail as SendEmail;
+                            use Srorage\StrategyPattern\SendMsg as SendMsg;
 
                             // Classes instantiated
                             $circle = new Circle();
@@ -76,11 +78,12 @@
                             $book->store();
                             $book->index();
                             // Tester
-                            $another = new Another('Bishwajit<br>', 'Jessore<br>', '56657567<br>', 'We are Bangladeshi by birth<br>');
-                            ?>
 
-                            <?php
-                            echo $book->updateView();
+                            // StrategyPattern
+                            $email = new SendEmail();
+                            $email->message();
+                            $message = SendMsg;
+                            $message->message();
                             ?>
                             <!-- ***** Write code above *****-->
                         </div>
