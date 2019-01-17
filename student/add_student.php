@@ -14,8 +14,45 @@
                             // Autoloads Starter
                             require_once '../App/start.php';
                             // Classes included
+                            use Storage\Student\Student as Student;
 
                             ?>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                <?php
+                                if (isset($msg)) {
+                                    echo $msg;
+                                }
+                                ?>
+                                    <form action="" method="POST">
+                                        <div class="form-group">
+                                            <input type="text" name="name" class="form-control" placeholder="Name....">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="address" class="form-control" placeholder="Address....">
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" name="submit"  class="btn bn-sm btn-success">Upload</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-sm-6">
+                                <?php
+                                $student = new Student();
+                                if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+                                    $result = $student->insert($_POST);
+                                }
+                                $some = $student->select();
+                                foreach ($some as $value) {
+                                    echo $value.'<br>';
+                                }
+                                // var_dump($some);
+
+                                ?>
+                                </div>
+                            </div>
+
+
                             <!-- ***** Write code above *****-->
                         </div>
                     </div>
