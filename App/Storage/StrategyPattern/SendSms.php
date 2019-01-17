@@ -6,6 +6,6 @@ class SendSms implements SendMsg
 {
     public function message()
     {
-        echo 'I am sending SMS to the user';
+        echo 'I am sending SMS to the user<br>';
     }
 }

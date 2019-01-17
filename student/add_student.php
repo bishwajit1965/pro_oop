@@ -1,18 +1,18 @@
-<?php require_once 'partials/_head.php'; ?>
+<?php require_once '../partials/_head.php'; ?>
     <body>
         <!-- Add your site or application content here -->
         <div class="container-fluid">
-            <?php require_once 'partials/_header.php'; ?>
+            <?php require_once '../partials/_header.php'; ?>
             <!-- Main content begins -->
             <div class="row bg-light p-2">
                 <div class="container">
                     <div class="row">
-                        <?php require_once 'partials/_sidebar.php'; ?>
+                        <?php require_once '../partials/_sidebar.php'; ?>
                         <div class="col-sm-9">
                             <!--***** Weite code below *****-->
                             <?php
                             // Autoloads Starter
-                            require_once 'App/start.php';
+                            require_once '../App/start.php';
                             // Classes included
                             use Storage\Calculator\Circle as Circle;
                             use Storage\Calculator\Triangle as Triangle;
@@ -26,9 +26,10 @@
                             use Storage\DesignPatterns\Template\Ebook as Ebook;
                             // Factory
                             use Storage\DesignPatterns\Factory\AutomobileFactory as AutomobileFactory;
-                            // Strategy Pattern
-                            use Storage\StrategyPattern\SendSms as SendSms;
-                            use Storage\StrategyPattern\SendEmail as SendEmail;
+                            // Tester
+                            // StrategyPattern
+                            use Srorage\StrategyPattern\SendEmail as SendEmail;
+                            use Srorage\StrategyPattern\SendMsg as SendMsg;
 
                             // Classes instantiated
                             $circle = new Circle();
@@ -76,14 +77,13 @@
                             $book = new Book();
                             $book->store();
                             $book->index();
-                            //Strategy pattern
-                            echo '<h2>Strategy patern</h2>';
+                            // Tester
 
-                            $msg = new SendSms();
-                            $mail = new SendEmail();
-                            $msg->message();
-                            $mail->message();
-
+                            // StrategyPattern
+                            $email = new SendEmail();
+                            $email->message();
+                            $message = SendMsg;
+                            $message->message();
                             ?>
                             <!-- ***** Write code above *****-->
                         </div>
@@ -91,8 +91,8 @@
                 </div>
             </div>
             <!--/Main content ends-->
-            <?php require_once 'partials/_footer.php'; ?>
+            <?php require_once '../partials/_footer.php'; ?>
         </div>
-        <?php require_once 'partials/_scripts.php'; ?>
+        <?php require_once '../partials/_scripts.php'; ?>
     </body>
 </html>

@@ -6,6 +6,6 @@ class SendEmail implements SendMsg
 {
     public function message()
     {
-        echo 'I am EMAIL to the user';
+        echo 'I am sending emailL to the user';
     }
 }
