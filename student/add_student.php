@@ -20,16 +20,19 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                 <?php
-                                if (isset($msg)) {
-                                    echo $msg;
+                                if (isset($_GET['addeded'])) {
+                                    echo 'Data added';
                                 }
                                 ?>
                                     <form action="" method="POST">
                                         <div class="form-group">
-                                            <input type="text" name="name" class="form-control" placeholder="Name....">
+                                            <input type="text" name="name" class="form-control" placeholder="Name...">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="address" class="form-control" placeholder="Address....">
+                                            <input type="text" name="address" class="form-control" placeholder="Address...">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="phone" class="form-control" placeholder="Phone...">
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" name="submit"  class="btn bn-sm btn-success">Upload</button>
@@ -43,8 +46,10 @@
                                     $result = $student->insert($_POST);
                                 }
                                 $some = $student->select();
-                                foreach ($some as $value) {
-                                    echo $value.'<br>';
+                                if (isset($some)) {
+                                    foreach ($some as $value) {
+                                        echo $value.'<br>';
+                                    }
                                 }
                                 // var_dump($some);
 

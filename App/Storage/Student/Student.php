@@ -12,10 +12,21 @@ class Student
         $this->name = $data;
         $name = $this->validate($data['name']);
         $address = $this->validate($data['address']);
-        if (empty($data['name'])) {
-            echo'Name field is empty';
-        } elseif (empty($data['address'])) {
-            echo 'Address field is empty';
+        $phone = $this->validate($data['phone']);
+        if (empty($name)) {
+            echo '<span style="color:red;">Name field is empty</span> <br>';
+        } else {
+            $name = $this->validate($data['name']);
+        }
+        if (empty($address)) {
+            echo '<span style="color:red;">Address field is empty </span><br>';
+        } else {
+            $address = $this->validate($data['address']);
+        }
+        if (empty($phone)) {
+            echo '<span style="color:red;">Phone field is empty </span><br>';
+        } else {
+            $address = $this->validate($data['address']);
         }
     }
 
