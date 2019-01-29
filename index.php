@@ -29,6 +29,9 @@
                             // Strategy Pattern
                             use Storage\StrategyPattern\SendSms as SendSms;
                             use Storage\StrategyPattern\SendEmail as SendEmail;
+                            // Visiblity
+                            use Storage\Visiblity\Visiblity as Visiblity;
+                            use Storage\Visiblity\VisiblityTwo as VisiblityTwo;
 
                             // Classes instantiated
                             $circle = new Circle();
@@ -77,13 +80,21 @@
                             $book->store();
                             $book->index();
                             //Strategy pattern
-                            echo '<h2>Strategy patern</h2>';
+                            echo '<h2>Strategy pattern</h2>';
 
                             $msg = new SendSms();
                             $mail = new SendEmail();
                             $msg->message();
                             $mail->message();
 
+                            // Visiblity
+                            echo '<h2>Visiblity Testing</h2>';
+                            $visiblity = new Visiblity();
+                            $visiblity->displayPublic();
+                            $visiblity->testVisiblity();
+
+                            $visiblityTwo = new VisiblityTwo();
+                            $visiblityTwo->displayPublic();
                             ?>
                             <!-- ***** Write code above *****-->
                         </div>
