@@ -29,13 +29,16 @@
                                             <input type="text" name="name" class="form-control" placeholder="Name...">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="address" class="form-control" placeholder="Address...">
+                                            <input type="text" name="address"
+                                            class="form-control" placeholder="Address...">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="phone" class="form-control" placeholder="Phone...">
+                                            <input type="text" name="phone"
+                                            class="form-control" placeholder="Phone...">
                                         </div>
                                         <div class="form-group">
-                                            <button type="submit" name="submit"  class="btn bn-sm btn-success">Upload</button>
+                                            <button type="submit" name="submit"
+                                            class="btn bn-sm btn-success">Upload</button>
                                         </div>
                                     </form>
                                 </div>
