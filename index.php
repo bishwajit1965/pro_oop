@@ -51,6 +51,7 @@
                             echo 'The area of the rectangle is :'.$rectangle->calculate().' meteres.'.'<br>';
 
                             // Trait instantiated
+                            echo '<h2>Trait Example</h2>';
                             $objectTrait = new MyHelloWorld();
                             $objectTrait->sayHello().'<br>';
 
