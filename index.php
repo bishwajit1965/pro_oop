@@ -1,110 +1,232 @@
-<?php require_once 'partials/_head.php'; ?>
+<?php require_once 'partials/_head.php';?>
     <body>
         <!-- Add your site or application content here -->
         <div class="container-fluid">
-            <?php require_once 'partials/_header.php'; ?>
+            <?php require_once 'partials/_header.php';?>
             <!-- Main content begins -->
             <div class="row bg-light p-2">
                 <div class="container">
                     <div class="row">
-                        <?php require_once 'partials/_sidebar.php'; ?>
+                        <?php require_once 'partials/_sidebar.php';?>
                         <div class="col-sm-9">
-                            <!--***** Weite code below *****-->
-                            <?php
-                            // Autoloads Starter
-                            require_once 'App/start.php';
-                            // Classes included
-                            use Storage\Calculator\Circle as Circle;
-                            use Storage\Calculator\Triangle as Triangle;
-                            use Storage\Calculator\Rectangle as Rectangle;
-                            use Storage\Interfacer\CircleArea as CircleArea;
-                            use Storage\Interfacer\RectangleArea as RectangleArea;
-                            // Trait
-                            use Storage\Traits\MyHelloWorld as MyHelloWorld;
-                            // DesignPattern
-                            use Storage\DesignPatterns\Template\PaperBack as PaperBack;
-                            use Storage\DesignPatterns\Template\Ebook as Ebook;
-                            // Factory
-                            use Storage\DesignPatterns\Factory\AutomobileFactory as AutomobileFactory;
-                            // Strategy Pattern
-                            use Storage\StrategyPattern\SendSms as SendSms;
-                            use Storage\StrategyPattern\SendEmail as SendEmail;
-                            // Visiblity
-                            use Storage\Visiblity\Visiblity as Visiblity;
-                            use Storage\Visiblity\VisiblityTwo as VisiblityTwo;
+                        <!--***** Weite code below *****-->
+                        <?php
+                        ///////////////////////
+                        // Autoloads Starter //
+                        ///////////////////////
+                        require_once 'App/start.php';
+                        //////////////////////
+                        // Classes included //
+                        //////////////////////
+                        use Storage\Calculator\Circle as Circle;
+                        use Storage\Calculator\Rectangle as Rectangle;
+                        use Storage\Calculator\Triangle as Triangle;
+                        use Storage\DesignPatterns\Factory\AutomobileFactory as AutomobileFactory;
+                        use Storage\DesignPatterns\Template\Ebook as Ebook;
 
-                            // Classes instantiated
-                            $circle = new Circle();
-                            echo 'The area of the circle is :'.$circle->calculate().' meteres.'.'<br>';
+                        ///////////
+                        // Trait //
+                        ///////////
+                        use Storage\DesignPatterns\Template\PaperBack as PaperBack;
 
-                            $triangle = new Triangle();
-                            echo 'The area of the triangle is :'.$triangle->calculate().' meteres.'.'<br>';
+                        ///////////////////
+                        // DesignPattern //
+                        ///////////////////
+                        // Factory
+                        use Storage\DynamicData\DynamicData as DynamicData;
 
-                            $rectangle = new Rectangle();
-                            echo 'The area of the rectangle is :'.$rectangle->calculate().' meteres.'.'<br>';
+                        //////////////////////
+                        // Strategy Pattern //
+                        //////////////////////
+                        use Storage\Inheritance\Book as Book;
+                        use Storage\Interfacer\CircleArea as CircleArea;
 
-                            // Interfacer circleArea instantiated
-                            $circle = new CircleArea();
-                            echo 'The area of the interfacer circle is :'.$circle->calculate().' meteres.'.'<br>';
+                        ///////////////
+                        // Visiblity //
+                        ///////////////
+                        use Storage\Visiblity\Visiblity as Visiblity;
 
-                            $rectangle = new RectangleArea();
-                            echo 'The area of the rectangle is :'.$rectangle->calculate().' meteres.'.'<br>';
+                        ///////////////
+                        // Interface //
+                        ///////////////
+                        use Storage\Interfacer\RectangleArea as RectangleArea;
 
-                            // Trait instantiated
-                            echo '<h2>Trait Example</h2>';
-                            $objectTrait = new MyHelloWorld();
-                            $objectTrait->sayHello().'<br>';
+                        //////////////////////
+                        // Strategy pattern //
+                        //////////////////////
+                        use Storage\StrategyPattern\SendEmail as SendEmail;
+                        use Storage\StrategyPattern\SendSms as SendSms;
 
-                            // Design pattern instantiated
-                            $paperback = new PaperBack();
-                            $paperback->setTitle('A Book on Wild Animals of Africa');
-                            $paperback->setContent('Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Amet sequi ut, earum, distinctio, dignissimos totam dolores est saepe magnam obcaecati qui.
-                            Expedita accusamus, repudiandae magnam corrupti officia facilis at officiis?');
-                            echo $paperback->printBook();
+                        ///////////
+                        // Trait //
+                        ///////////
+                        use Storage\TraitsExample\TesterTrait as TesterTrait;
 
-                            $ebook = new Ebook();
-                            $ebook->setTitle('A Book on Wild Animals of Africa');
-                            echo $ebook->generatePdf();
+                        /////////////////////
+                        // Adapter pattern //
+                        /////////////////////
+                        use Storage\adapterPattern\SimpleBook as SimpleBook;
+                        use Storage\adapterPattern\BookAdapter as BookAdapter;
 
-                            // Factory instantiated
-                            echo '<h2>Factory design pattern</h2>';
+                        ///////////////////
+                        // Array Testing //
+                        ///////////////////
+                        use Storage\ArrayTesting\ArrayTesting as ArrayTesting;
 
-                            $automobile = AutomobileFactory::create('Bugatti', 'Veyron');
-                            echo $automobile->getMakeAndModel();
 
-                            // Inheritance
-                            echo '<h2>Inheritance</h2>';
-                            use Storage\Inheritance\Book as Book;
+                        //////////////////////////
+                        // Classes instantiated //
+                        //////////////////////////
+                        echo '<h2>Calculator Testing</h2>';
+                        $i ='1';
+                        for ($i =1; $i < 80; $i++) {
+                            echo ' - ';
+                            $i++;
+                        }
+                        echo '<br>';
+                        $circle = new Circle();
+                        echo 'The area of the circle is :' . $circle->calculate() . ' meteres.' . '<br>';
 
-                            $book = new Book();
-                            $book->store();
-                            $book->index();
-                            //Strategy pattern
-                            echo '<h2>Strategy pattern</h2>';
+                        $triangle = new Triangle();
+                        echo 'The area of the triangle is :' . $triangle->calculate() . ' meteres.' . '<br>';
 
-                            $msg = new SendSms();
-                            $mail = new SendEmail();
-                            $msg->message();
-                            $mail->message();
+                        $rectangle = new Rectangle();
+                        echo 'The area of the rectangle is :' . $rectangle->calculate() . ' meteres.' . '<br>';
 
-                            // Visiblity
-                            echo '<h2>Visiblity Testing</h2>';
-                            $visiblity = new Visiblity();
-                            $visiblity->displayPublic();
-                            $visiblity->testVisiblity();
+                        ////////////////////////////////////////
+                        // Interfacer circleArea instantiated //
+                        ////////////////////////////////////////
+                        $circle = new CircleArea();
+                        echo 'The area of the interfacer circle is :' . $circle->calculate() . ' meteres.' . '<br>';
 
-                            $visiblityTwo = new VisiblityTwo();
-                            $visiblityTwo->displayPublic();
-                            ?>
-                            <!-- ***** Write code above *****-->
+                        $rectangle = new RectangleArea();
+                        echo 'The area of the rectangle is :' . $rectangle->calculate() . ' meteres.' . '<br>';
+
+                        /////////////////////////////////
+                        // Design pattern instantiated //
+                        /////////////////////////////////
+                        $paperback = new PaperBack();
+                        $paperback->setTitle('A Book on Wild Animals of Africa');
+                        $paperback->setContent('Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Amet sequi ut, earum, distinctio, dignissimos totam dolores est saepe magnam obcaecati qui.
+                        Expedita accusamus, repudiandae magnam corrupti officia facilis at officiis?');
+                        echo $paperback->printBook();
+
+                        $ebook = new Ebook();
+                        $ebook->setTitle('A Book on Wild Animals of Africa');
+                        echo $ebook->generatePdf();
+
+                        //////////////////////////
+                        // Factory instantiated //
+                        //////////////////////////
+                        echo '<h2>Factory design pattern</h2>';
+                        $i ='1';
+                        for ($i =1; $i < 80; $i++) {
+                            echo ' - ';
+                            $i++;
+                        }
+                        echo '<br>';
+
+                        $automobile = AutomobileFactory::create('Bugatti', 'Veyron');
+                        echo $automobile->getMakeAndModel();
+
+                        /////////////////
+                        // Inheritance //
+                        /////////////////
+                        echo '<h2>Inheritance</h2>';
+                        use Storage\Visiblity\VisiblityTwo as VisiblityTwo;
+
+                        $i ='1';
+                        for ($i =1; $i < 80; $i++) {
+                            echo ' - ';
+                            $i++;
+                        }
+                        echo '<br>';
+
+                        $book = new Book();
+                        $book->store();
+                        $book->index();
+                        /////////////////////
+                        //Strategy pattern //
+                        /////////////////////
+                        echo '<h2>Strategy pattern</h2>';
+                        $i ='1';
+                        for ($i =1; $i < 80; $i++) {
+                            echo ' - ';
+                            $i++;
+                        }
+                        echo '<br>';
+                        $msg = new SendSms();
+                        $mail = new SendEmail();
+                        $msg->message();
+                        $mail->message();
+
+                        ///////////////
+                        // Visiblity //
+                        ///////////////
+                        echo '<h2>Visiblity Testing</h2>';
+                        $i ='1';
+                        for ($i =1; $i < 80; $i++) {
+                            echo ' - ';
+                            $i++;
+                        }
+                        echo '<br>';
+                        $visiblity = new Visiblity();
+                        $visiblity->displayPublic();
+                        $visiblity->testVisiblity();
+
+                        $visiblityTwo = new VisiblityTwo();
+                        $visiblityTwo->displayPublic();
+
+                        ////////////////////////
+                        // Trait instantiated //
+                        ////////////////////////
+                        echo '<h2>Trait Example</h2>';
+                        $i ='1';
+                        for ($i =1; $i < 80; $i++) {
+                            echo ' <b>-</b> ';
+                            $i++;
+                        }
+                        echo '<br>';
+
+                        $traits = new TesterTrait;
+                        $traits->calculate(50, 50);
+
+                        /////////////////////
+                        // Adapter pattern //
+                        /////////////////////
+                        echo '<h2>Adapter pattern Example</h2>';
+                        $i ='1';
+                        for ($i =1; $i < 80; $i++) {
+                            echo ' <b>-</b> ';
+                            $i++;
+                        }
+                        echo '<br>';
+
+                        #code here .......
+
+
+                        //////////////////
+                        //Array Testing //
+                        //////////////////
+                        echo '<h2>Array Testing Example</h2>';
+                        $i ='1';
+                        for ($i =1; $i < 80; $i++) {
+                            echo ' - ';
+                            $i++;
+                        }
+                        echo '<br>';
+                        $arrayTesting = new ArrayTesting();
+                        ?>
+
+                        <!-- ***** Write code above *****-->
                         </div>
                     </div>
                 </div>
             </div>
             <!--/Main content ends-->
-            <?php require_once 'partials/_footer.php'; ?>
+            <?php require_once 'partials/_footer.php';?>
         </div>
-        <?php require_once 'partials/_scripts.php'; ?>
+        <?php require_once 'partials/_scripts.php';?>
     </body>
 </html>

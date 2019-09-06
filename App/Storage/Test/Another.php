@@ -3,7 +3,10 @@ namespace Storage\Test;
 
 class Another extends Tester
 {
-    public $name, $address, $phone, $another;
+    public $name;
+    public $address;
+    public $phone;
+    public $another;
 
     public function __construct($name, $address, $phone, $another)
     {
