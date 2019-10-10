@@ -1,4 +1,4 @@
-<?php require_once '../includes/_head.php'; ?>
+<?php require_once '../includes/__head.php';?>
     <body>
         <!-- Add your site or application content here -->
         <div class="container-fluid">
@@ -20,24 +20,37 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                 <?php
+                                $button = "button";
+                                $element = ['name', 'adddress', 'phone'];
+                                $keyData = array_search('name', $element);
+
                                 if (isset($_GET['addeded'])) {
                                     echo 'Data added';
                                 }
                                 ?>
                                     <form action="" method="POST">
                                         <div class="form-group">
-                                            <input type="text" name="name" class="form-control" placeholder="Name...">
+                                            <input type="text" name="name"
+                                            class="form-control"
+                                            placeholder="Name...">
                                         </div>
                                         <div class="form-group">
                                             <input type="text" name="address"
-                                            class="form-control" placeholder="Address...">
+                                            class="form-control"
+                                            placeholder="Address...">
                                         </div>
                                         <div class="form-group">
                                             <input type="text" name="phone"
-                                            class="form-control" placeholder="Phone...">
+                                            class="form-control"
+                                            placeholder="Phone...">
                                         </div>
                                         <div class="form-group">
-                                            <button type="submit" name="submit"
+                                            <button type="submit"
+                                            <?php
+                                            if ($keyData = true) {
+                                                $button = "disabled";
+                                                echo $button;
+                                            } ?> name="submit"
                                             class="btn bn-sm btn-success">Upload</button>
                                         </div>
                                     </form>
@@ -54,13 +67,10 @@
                                         echo $value.'<br>';
                                     }
                                 }
-                                // var_dump($some);
 
                                 ?>
                                 </div>
                             </div>
-
-
                             <!-- ***** Write code above *****-->
                         </div>
                     </div>
