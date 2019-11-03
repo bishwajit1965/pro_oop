@@ -1,4 +1,4 @@
-<?php require_once '../includes/__head.php';?>
+<?php require_once '../includes/_head.php';?>
     <body>
         <!-- Add your site or application content here -->
         <div class="container-fluid">
@@ -45,20 +45,23 @@
                                             placeholder="Phone...">
                                         </div>
                                         <div class="form-group">
-                                            <button type="submit"
-                                            <?php
-                                            if ($keyData = true) {
-                                                $button = "disabled";
-                                                echo $button;
-                                            } ?> name="submit"
+                                            <button type="submit" onClick="return confirm('Are sure of submitting data?');"
+                                                <?php
+                                                // It will disable the button
+                                                // if ($keyData = true) {
+                                                //     $button = "disabled";
+                                                //     echo $button;
+                                                // }
+                                                ?>
+                                            name="submit"
                                             class="btn bn-sm btn-success">Upload</button>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="col-sm-6">
                                 <?php
-                                $student = new Student();
                                 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+                                    $student = new Student();
                                     $result = $student->insert($_POST);
                                 }
                                 $some = $student->select();
