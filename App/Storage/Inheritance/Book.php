@@ -1,3 +1,4 @@
+
 <?php
 
 namespace Storage\Inheritance;
@@ -8,6 +9,7 @@ class Book extends Main
      * Book an extended class.
      */
     public $name = 'Bangladeshi people';
+    public $data = '';
 
     public function __construct()
     {

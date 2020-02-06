@@ -12,25 +12,25 @@ class Main
 
     public function index()
     {
-        echo 'I am in index method';
+        echo 'I am in index method 00<br>';
     }
 
     public function store()
     {
-        echo 'I am in store method';
+        echo 'I am in store method 2<br>';
 
         return $this->index();
     }
-
     public function updateView()
     {
-        return $this->store();
+        return $this->store().'<br>';
 
-        echo $this->data;
+        echo $this->data.'<br>';
     }
 
-    public function update($data)
+    public function update()
     {
+        echo 'I am in update method 1';
     }
 
     public function deleteView($data)

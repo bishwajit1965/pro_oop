@@ -1,8 +1,8 @@
 <?php
 namespace Storage\Calculator;
-
 /**
- * Abstract class Clalculator
+ * [abstract description]
+ * @var [type]
  */
 abstract class Calculator
 {

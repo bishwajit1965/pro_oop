@@ -23,6 +23,8 @@
                         use Storage\Calculator\Triangle as Triangle;
                         use Storage\DesignPatterns\Factory\AutomobileFactory as AutomobileFactory;
                         use Storage\DesignPatterns\Template\Ebook as Ebook;
+                        use Storage\Inheritance\Book as Book;
+                        use Storage\Inheritance\Main as Main;
 
                         ///////////
                         // Trait //
@@ -38,7 +40,6 @@
                         //////////////////////
                         // Strategy Pattern //
                         //////////////////////
-                        use Storage\Inheritance\Book as Book;
                         use Storage\Interfacer\CircleArea as CircleArea;
 
                         ///////////////
@@ -142,13 +143,16 @@
                             $i++;
                         }
                         echo '<br>';
+                        $main = new Main();
+                        $book = new Book($main);
+                        $book->store().'<br>';
+                        $book->index().'<br>'.'<br>';
+                        $book->update().'<br>';
 
-                        $book = new Book();
-                        $book->store();
-                        $book->index();
                         /////////////////////
                         //Strategy pattern //
                         /////////////////////
+
                         echo '<h2>Strategy pattern</h2>';
                         $i ='1';
                         for ($i =1; $i < 80; $i++) {
