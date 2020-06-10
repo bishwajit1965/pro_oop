@@ -25,6 +25,7 @@
                         use Storage\DesignPatterns\Template\Ebook as Ebook;
                         use Storage\Inheritance\Book as Book;
                         use Storage\Inheritance\Main as Main;
+                        
 
                         ///////////
                         // Trait //
@@ -74,6 +75,16 @@
                         ///////////////////
                         use Storage\ArrayTesting\ArrayTesting as ArrayTesting;
 
+                        ////////////////////
+                        // Abstract Class //
+                        ////////////////////
+                        use Storage\AbstractClass\Honda as Honda;
+
+                        //////////////////////////
+                        // Dependency Injection //
+                        //////////////////////////
+                        use Storage\DependencyInjection\Master as Master;
+                        use Storage\DependencyInjection\DependencyInjection as DependencyInjection;
 
                         //////////////////////////
                         // Classes instantiated //
@@ -208,7 +219,7 @@
                         echo '<br>';
 
                         #code here .......
-
+                        
 
                         //////////////////
                         //Array Testing //
@@ -221,8 +232,47 @@
                         }
                         echo '<br>';
                         $arrayTesting = new ArrayTesting();
-                        ?>
+                        
+                        ///////////////////
+                        //Abstract calss //
+                        ///////////////////
+                        
+                        echo '<h2>Use of Abstract class</h2>';
+                        $i ='1';
+                        for ($i =1; $i < 80; $i++) {
+                            echo ' - ';
+                            $i++;
+                        }
+                        echo '<br>';
+                        $honda = new Honda();
+                        $honda->name();
+                        echo '<br>';
+                        $honda->data();
 
+                        ////////////////////////
+                        //Dependency injection//
+                        ////////////////////////
+                        
+                        echo '<h2>Use dependency injection</h2>';
+                        $i ='1';
+                        for ($i =1; $i < 80; $i++) {
+                            echo ' - ';
+                            $i++;
+                        }
+                        echo '<br>';
+                        $master = new Master();
+                        $dependencyInjection = new DependencyInjection($master);
+                        $dependencyInjection->teach();
+                        $dependencyInjection->instruct();
+                        $dependencyInjection->guide();
+                        echo '<br>';
+                        // Methods are chained
+                        $dependencyInjection->teach()->instruct()->guide();
+
+
+
+
+                        ?>
                         <!-- ***** Write code above *****-->
                         </div>
                     </div>

@@ -20,7 +20,16 @@ class Visiblity
     public function displayPublic()
     {
         echo 'I am in a public method.'.BR;
-
         return true;
+    }
+    private function testMyVisibility()
+    {
+        echo "Testing of private method visiblity";
+        return $this;
+    }
+    protected function testVisibility()
+    {
+        echo "Testing of protected method visiblity";
+        return $this;
     }
 }
