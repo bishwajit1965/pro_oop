@@ -10,6 +10,12 @@ class VisiblityTwo extends Visiblity
         echo $this->public.BR;
         echo $this->protected.BR;
         // This property will generate error
-        // echo $this->private.BR;
+        //echo $this->private.BR;
+        
+        //Private method visiblity
+        $this->testVisiblity();
+
+        // Will throw an uncaught arror
+        //$this->testMyVisibility();
     }
 }
